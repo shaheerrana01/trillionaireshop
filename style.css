@@ -1,0 +1,287 @@
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2; /* above hero overlay */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffd700; /* gold hover */
+}
+/* SIGN IN BUTTON */
+.signin {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 3; /* highest layer */
+}
+
+.signin-btn {
+    text-decoration: none;
+    padding: 10px 22px;
+    background-color: #ffd700; /* gold */
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.signin-btn:hover {
+    background-color: black;
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* CATEGORY BUTTONS */
+.categories {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; /* so it appears above hero overlay */
+  
+}
+.categories button {
+    padding: 14px 30px;
+    font-size: 17px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.categories button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+
+/* HERO SECTION */
+.hero {
+    height: 90vh; /* full screen */
+    background-image: url("images.jpg/webpage.jpg"); /* correct path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column; /* stack buttons and content vertically */
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 80px;
+    padding-top: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* dark overlay */
+}
+
+/* HERO TEXT */
+.hero-content {
+    color: white;
+    max-width: 600px;
+    position: relative;
+    z-index: 1; /* keep above overlay */
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+/* PRODUCT SECTION */
+.products-section {
+    padding: 60px 40px;
+    background-color: #f5f5f5;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    margin-top: -50px;
+}
+
+/* GRID SYSTEM */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* PRODUCT CARD */
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* PRODUCT INFO */
+.product-card h3 {
+    margin: 15px 0 5px;
+    font-size: 20px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.product-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.cart-btn,
+.buy-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.cart-btn {
+    background-color: black;
+    color: white;
+}
+
+.buy-btn {
+    background-color: #ffd700;
+    color: black;
+}
+
+.cart-btn:hover {
+    background-color: #333;
+}
+
+.buy-btn:hover {
+    background-color: #e6c200;
+}
+.footer-bix{
+    display: flex;
+    justify-content: center;
+}
+/* FOOTER */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 60px;
+}
+
+/* Container Flex for Horizontal Layout */
+.footer-container {
+    display: flex;                /* flex layout */
+    flex-wrap: wrap;              /* wrap on smaller screens */
+    justify-content: flex-start;  /* align left */
+    gap: 60px;                    /* spacing between boxes */
+    align-items: flex-start;
+}
+
+/* Footer Boxes */
+.footer-box {
+    min-width: 180px; /* prevent too small boxes */
+}
+
+/* Headings */
+.footer-box h3,
+.footer-box h4 {
+    color: #ffd700; /* gold */
+    margin-bottom: 15px;
+}
+
+/* Text */
+.footer-box p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Lists */
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box ul li {
+    margin-bottom: 10px;
+}
+
+.footer-box ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-box ul li a:hover {
+    color: #ffd700;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #aaa;
+}
